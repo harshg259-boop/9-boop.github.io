@@ -2,78 +2,90 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>You Said Yes 💘</title>
+  <title>It’s Official 💘</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <style>
     body {
       margin: 0;
       height: 100vh;
-      background: linear-gradient(135deg, #ff758c, #ff7eb3);
+      background: linear-gradient(135deg, #ffdde1, #ee9ca7);
       display: flex;
       justify-content: center;
       align-items: center;
       font-family: Arial, sans-serif;
-      text-align: center;
-      color: white;
       overflow: hidden;
     }
 
-    .box {
-      background: rgba(255,255,255,0.15);
-      padding: 30px;
+    .card {
+      background: white;
+      padding: 35px;
       border-radius: 20px;
-      animation: fadeIn 1.5s ease;
+      text-align: center;
+      width: 90%;
+      max-width: 350px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+      animation: pop 0.8s ease;
     }
 
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    h1 {
-      font-size: 28px;
+    h2 {
+      color: #ff4d6d;
+      margin-bottom: 10px;
     }
 
     p {
-      font-size: 18px;
-      margin-top: 10px;
+      font-size: 15px;
+      opacity: 0.85;
+      margin-top: 8px;
+    }
+
+    @keyframes pop {
+      from { transform: scale(0.8); opacity: 0; }
+      to { transform: scale(1); opacity: 1; }
     }
 
     .heart {
-      position: fixed;
-      font-size: 24px;
+      position: absolute;
+      font-size: 22px;
       animation: float 5s linear infinite;
     }
 
     @keyframes float {
-      0% { transform: translateY(100vh); opacity: 1; }
-      100% { transform: translateY(-10vh); opacity: 0; }
+      from { transform: translateY(100vh); opacity: 1; }
+      to { transform: translateY(-10vh); opacity: 0; }
     }
   </style>
 </head>
+
 <body>
 
-<div class="box">
-  <h1>Bani 💖 Harsh</h1>
-  <p>Good choice 😌<br>
-     You just made my entire year.</p>
-  <p><strong>Valentine confirmed ✔️</strong></p>
-  <p style="margin-top:15px; font-size:14px;">
-    (No refunds. No returns. Lifetime subscription 😏)
-  </p>
-</div>
+  <div class="card">
+    <h2>Good choice, Bani 😌❤️</h2>
 
-<script>
-  setInterval(() => {
-    const heart = document.createElement("div");
-    heart.className = "heart";
-    heart.innerHTML = "💖";
-    heart.style.left = Math.random() * 100 + "vw";
-    document.body.appendChild(heart);
+    <p>
+      Congratulations. You just unlocked Harsh – Lifetime Edition.
+    </p>
 
-    setTimeout(() => heart.remove(), 5000);
-  }, 300);
-</script>
+    <p>
+      I know we don’t know each other that well yet —
+      consider this a small, low-risk demo version 🙂
+    </p>
+
+    <p style="margin-top:15px; font-size:14px;">
+      No pressure. Just curiosity… and good vibes.
+    </p>
+  </div>
+
+  <script>
+    setInterval(() => {
+      const heart = document.createElement("div");
+      heart.className = "heart";
+      heart.innerText = "❤️";
+      heart.style.left = Math.random() * 100 + "vw";
+      document.body.appendChild(heart);
+      setTimeout(() => heart.remove(), 5000);
+    }, 400);
+  </script>
 
 </body>
 </html>
